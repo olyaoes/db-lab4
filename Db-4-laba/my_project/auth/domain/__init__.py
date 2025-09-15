@@ -1,0 +1,10 @@
+from .orders.users import Users  # Модель для таблиці Users
+from .orders.solar_station import SolarStation  # Модель для таблиці SolarStation
+from .orders.station_owner import StationOwner  # Модель для таблиці StationOwner
+from .orders.panel import Panel  # Модель для таблиці Panel
+from .orders.battery import Battery  # Модель для таблиці Battery
+from .orders.power_production import PowerProduction  # Модель для таблиці PowerProduction
+from .orders.battery_charge import BatteryCharge  # Модель для таблиці BatteryCharge
+from .orders.energy_sales import EnergySales  # Модель для таблиці EnergySales
+from .orders.panel_angle_adjustment import PanelAngleAdjustment  # Модель для таблиці PanelAngleAdjustment
+from .orders.energy_price import EnergyPrice  # Модель для таблиці EnergyPrice
