@@ -7,8 +7,7 @@ development:
   DEBUG: True
 #  SQLALCHEMY_DATABASE_URI: 'sqlite://'
 #  SQLALCHEMY_DATABASE_URI: 'sqlite:///device_db.sqlite'
-  SQLALCHEMY_DATABASE_URI: 'mysql://root:21Olya0822/@127.0.0.1/solar_station_db3'
-
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:21Olya0822@server-labs.mysql.database.azure.com:3306/solar_station_db3?ssl_mode=require"
 production:
   <<: *common
   SQLALCHEMY_DATABASE_URI: 'mysql://root:AXProduct2024@localhost/test'
@@ -16,3 +15,7 @@ production:
 ADDITIONAL_CONFIG:
   MYSQL_ROOT_USER: root
   MYSQL_ROOT_PASSWORD: 21Olya0822/
+  SWAGGER:
+    title: "Solar Station API"
+    version: "1.0.0"
+    description: "API documentation for the Solar Station management system"

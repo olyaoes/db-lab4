@@ -1,4 +1,4 @@
-# Імпорти контролерів
+# Import controllers
 from my_project.auth.controller.orders.panel_angle_adjustment_controller import PanelAngleAdjustmentController
 from my_project.auth.controller.orders.energy_price_controller import EnergyPriceController
 from my_project.auth.controller.orders.users_controller import UsersController
@@ -10,7 +10,7 @@ from my_project.auth.controller.orders.battery_controller import BatteryControll
 from my_project.auth.controller.orders.power_production_controller import PowerProductionController
 from my_project.auth.controller.orders.battery_charge_controller import BatteryChargeController
 
-# Ініціалізація контролерів
+# Initialize controllers
 panel_angle_adjustment_controller = PanelAngleAdjustmentController()
 energy_price_controller = EnergyPriceController()
 users_controller = UsersController()
@@ -21,4 +21,3 @@ panel_controller = PanelController()
 battery_controller = BatteryController()
 power_production_controller = PowerProductionController()
 battery_charge_controller = BatteryChargeController()
-

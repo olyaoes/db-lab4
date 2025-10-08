@@ -1,6 +1,7 @@
 import os
 from waitress import serve
 import yaml
+from flasgger import Swagger
 from my_project import create_app
 
 DEVELOPMENT_PORT = 1401
@@ -23,11 +24,13 @@ def run_flask_app():
             if flask_env == DEVELOPMENT:
                 config_data = config_data_dict[DEVELOPMENT]
                 app = create_app(config_data, additional_config)
+                Swagger(app, template=additional_config["SWAGGER"])
                 app.run(port=DEVELOPMENT_PORT, debug=True)
 
             elif flask_env == PRODUCTION:
                 config_data = config_data_dict[PRODUCTION]
                 app = create_app(config_data, additional_config)
+                Swagger(app, template=additional_config["SWAGGER"])
                 serve(app, host=HOST, port=PRODUCTION_PORT)
 
             else:
@@ -39,12 +42,3 @@ def run_flask_app():
 
 if __name__ == '__main__':
     run_flask_app()
-
-
-
-
-
-
-
-
-
