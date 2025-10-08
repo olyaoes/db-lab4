@@ -7,7 +7,7 @@ development:
   DEBUG: True
 #  SQLALCHEMY_DATABASE_URI: 'sqlite://'
 #  SQLALCHEMY_DATABASE_URI: 'sqlite:///device_db.sqlite'
-  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:21Olya0822@server-labs.mysql.database.azure.com:3306/solar_station_db3?ssl_mode=require"
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:21Olya0822@server-labs.mysql.database.azure.com:3306/solar_station_db3"
 production:
   <<: *common
   SQLALCHEMY_DATABASE_URI: 'mysql://root:AXProduct2024@localhost/test'
