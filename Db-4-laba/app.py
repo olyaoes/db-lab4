@@ -25,7 +25,7 @@ def run_flask_app():
                 config_data = config_data_dict[DEVELOPMENT]
                 app = create_app(config_data, additional_config)
                 Swagger(app, template=additional_config["SWAGGER"])
-                app.run(port=DEVELOPMENT_PORT, debug=True)
+                app.run(port=DEVELOPMENT_PORT, debug=True, host="0.0.0.0")
 
             elif flask_env == PRODUCTION:
                 config_data = config_data_dict[PRODUCTION]
