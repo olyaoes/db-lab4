@@ -6,14 +6,15 @@ development:
   <<: *common
   DEBUG: True
   SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:21Olya0822@server-labs.mysql.database.azure.com:3306/solar_station_db3?ssl_ca=/home/azureuser/ssl_certs/BaltimoreCyberTrustRoot.crt.pem&ssl_mode=REQUIRED"
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://{0}:{1}@server-labs.mysql.database.azure.com:3306/solar_station_db3?ssl=true"
 
 production:
   <<: *common
   SQLALCHEMY_DATABASE_URI: "mysql+pymysql://root:AXProduct2024@localhost/test"
 
 ADDITIONAL_CONFIG:
-  MYSQL_ROOT_USER: root
-  MYSQL_ROOT_PASSWORD: 21Olya0822/
+  MYSQL_ROOT_USER: labolya21
+  MYSQL_ROOT_PASSWORD: 21Olya0822
   SWAGGER:
     swagger: "2.0"
     info:
