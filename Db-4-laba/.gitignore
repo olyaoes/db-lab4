@@ -1,3 +1,7 @@
+# virtualenv
+venv/
+app/venv/
+
 # Docker DB
 ../../../../Users/Pavelchak/Desktop/DataBase/
 
@@ -8,10 +12,6 @@
 .pytest_cache/
 __pycache__/
 pytest.ini
-
-# virtualenv
-app/venv/
-
 
 # IntelliJ
 /out/
@@ -63,4 +63,3 @@ coverage.xml
 
 # PyBuilder
 target/
-
