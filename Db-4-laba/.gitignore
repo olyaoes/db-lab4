@@ -62,4 +62,12 @@ coverage.xml
 .hypothesis/
 
 # PyBuilder
-target/
+**/venv/**
+<<<<<<< HEAD
+=======
+
+venv/
+venv/
+venv/
+venv/
+>>>>>>> 2c71d79656e4e087b6ee236bbbc3344a6174a7eb
