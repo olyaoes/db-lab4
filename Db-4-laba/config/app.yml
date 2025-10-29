@@ -5,7 +5,7 @@ COMMON: &common
 development:
   <<: *common
   DEBUG: True
-  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:210lya0822@server-labs.mysql.database.azure.com/test"
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://labolya21:21Olya0823@server-labs.mysql.database.azure.com:3306/solar_station_db?ssl=true"
 
 production:
   <<: *common
