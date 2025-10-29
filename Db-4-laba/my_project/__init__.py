@@ -16,10 +16,10 @@ def create_app(app_config: Dict[str, Any], additional_config: Dict[str, Any]) ->
     app.config["SECRET_KEY"] = secrets.token_hex(16)
     app.config.update(app_config)
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-        "connect_args": {
-            "ssl": {"ssl_mode": "REQUIRED"}
-        }
+    "connect_args": {
+        "ssl": {"ca": "/etc/ssl/certs/ca-certificates.crt"}
     }
+}
 
     _init_db(app)
     register_routes(app)
