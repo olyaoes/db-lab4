@@ -8,14 +8,15 @@ from my_project.auth.route import register_routes
 db = SQLAlchemy()
 todos = {}
 
-print(type(config_data))
-print(config_data)
-
-
 def create_app(app_config: Dict[str, Any], additional_config: Dict[str, Any]) -> Flask:
     app = Flask(__name__)
     app.config["SECRET_KEY"] = secrets.token_hex(16)
     app.config.update(app_config)
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "connect_args": {
+            "ssl": {"ssl_mode": "REQUIRED"}
+        }
+    }
 
     _init_db(app)
     register_routes(app)
@@ -25,6 +26,7 @@ def create_app(app_config: Dict[str, Any], additional_config: Dict[str, Any]) ->
     create_dynamic_tables_procedure(app)
     return app
 
+
 def _init_db(app: Flask) -> None:
     db.init_app(app)
     if not database_exists(app.config["SQLALCHEMY_DATABASE_URI"]):
@@ -32,6 +34,7 @@ def _init_db(app: Flask) -> None:
     import my_project.auth.domain
     with app.app_context():
         db.create_all()
+
 
 def _init_swagger(app: Flask) -> None:
     from flask_restx import Api, Resource
@@ -51,6 +54,7 @@ def _init_swagger(app: Flask) -> None:
     @app.route("/hi")
     def hello_world():
         return todos, HTTPStatus.OK
+
 
 def _process_input_config(app_config: Dict[str, Any], additional_config: Dict[str, Any]) -> None:
     pass
